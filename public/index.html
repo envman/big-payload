@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+</html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+
+<script type="text/javascript">
+  $(function() {
+    $.get('http://localhost:8080/', function(val) {
+      glob = val
+
+      console.time('filter')
+
+      const found = val.filter(v => v.Type === 'Testing')
+
+      console.timeEnd('filter')
+    })
+  })
+</script>
+
+</html>
